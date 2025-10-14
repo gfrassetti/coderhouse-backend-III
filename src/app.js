@@ -10,7 +10,9 @@ import mocksRouter from './routes/mocks.router.js';
 
 const app = express();
 const PORT = process.env.PORT||8080;
-const connection = mongoose.connect(`mongodb://localhost:27017/coderhouse-backend-III`)
+mongoose.connect(`mongodb+srv://guidofrassetti_db_user:bQ5RQoezsCZF7xLe@cluster0.z3ktso1.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`)
+.then(() => console.log('Conectado a MongoDB Atlas'))
+.catch(err => console.error('Error conectando a MongoDB:', err))
 
 app.use(express.json());
 app.use(cookieParser());
